@@ -4,7 +4,7 @@
             <div class="header__logo">
                 <img src="../assets/logo-storm.png" alt="Logo Storm Security">
             </div>
-            <div class="header__menu" v-bind:class="{active: active}" @click="active = !active">
+            <div class="header__menu" :class="{active: active}" @click="active = !active">
                 <div class="header__menu--border-left"></div>
                 <MenuMobile></MenuMobile>
             </div>
