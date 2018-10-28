@@ -22,7 +22,7 @@
 
  export default {
      name: 'News',
-     components: {Picture1,Picture2,Picture3},
+     components: {Picture1, Picture2, Picture3},
      data() {
          return {
              selected: 0,

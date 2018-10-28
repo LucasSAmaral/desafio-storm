@@ -2,7 +2,11 @@
     <div class="carrossel__container">
         <ul class="carrossel">
             <li class="carrossel__item" v-bind:key="banner" v-for="banner in banners">
-                <img :src="banner.srcMobile" :alt="banner.alt">        
+                <picture>
+                    <source :srcset="banner.srcDesktop" media="(min-width: 769px)">
+                    <source :srcset="banner.srcMobile" media="(max-width: 768px)">
+                    <img :src="banner.srcMobile" :alt="banner.alt">
+                </picture>
             </li>
         </ul>
     </div>
@@ -12,23 +16,30 @@
 import BannerMobile1 from '../assets/image1-mobile.jpg'
 import BannerMobile2 from '../assets/image2-mobile.jpg'
 import BannerMobile3 from '../assets/image3-mobile.jpg'
+import BannerDesktop1 from '../assets/image1-desktop.jpg'
+import BannerDesktop2 from '../assets/image2-desktop.jpg'
+import BannerDesktop3 from '../assets/image3-desktop.jpg'
+
 export default {
     name: 'Carrossel',
-    components: {BannerMobile1,BannerMobile2,BannerMobile3},
+    components: {BannerMobile1,BannerMobile2,BannerMobile3,BannerDesktop1,BannerDesktop2,BannerDesktop3},
     data() {
         return {
             banners: 
             [{
                 srcMobile: BannerMobile1,
-                alt: 'Banner Mobile 1'
+                srcDesktop: BannerDesktop1,
+                alt: 'Banner 1'
             },
             {
                 srcMobile: BannerMobile2,
-                alt: 'Banner Mobile 2'
+                srcDesktop: BannerDesktop2,
+                alt: 'Banner 2'
             },
             {
                 srcMobile: BannerMobile3,
-                alt: 'Banner Mobile 3'
+                srcDesktop: BannerDesktop3,
+                alt: 'Banner 3'
             }]
         }
     },

@@ -45,6 +45,7 @@ export default {
                 float: left;
                 padding: 0 10px;
                 position: relative;
+                cursor: pointer;
 
                 &:last-child {
                     border-right: none;
@@ -54,11 +55,16 @@ export default {
                     &::after {
                         content: "";
                         position: absolute;
-                        min-width: 105px;
                         min-height: 4px;
                         background-color: #fff001;
                         top: 26px;
                         left: 17px;
+                    }
+
+                    &.first {
+                        &::after {
+                            min-width: 105px;
+                        }
                     }
 
                     &.second,
