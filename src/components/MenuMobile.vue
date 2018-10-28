@@ -50,7 +50,7 @@ export default {
                 padding: 0;
                 padding-left: 10px;
                 padding-right: 10px;
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: myriad-hebrew, sans-serif;
 
                 li {
                     border-bottom: 1px solid #2f3030;
@@ -91,7 +91,7 @@ export default {
 
             p {
                 margin: 0;
-                font-family: 'Times New Roman', Times, serif;
+                font-family: adobe-garamond-pro, serif;
                 font-size: 12px;
                 color: #e4f2fd;
 
@@ -105,7 +105,7 @@ export default {
             background-image: url('../assets/header-background.jpg');
             width: 100%;
             height: 32px;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: myriad-hebrew, sans-serif;
             padding: 10px 20px;
             display: flex;
 

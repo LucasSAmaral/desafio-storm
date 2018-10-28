@@ -63,7 +63,7 @@
         text-align: center;
         margin-top: 63px;
         color: #e4f2fd;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: myriad-hebrew, sans-serif;
 
         select {
             width: 300px;
@@ -71,7 +71,7 @@
             padding: 7px;
             padding-right: 44px;
             border-radius: 3px;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: adobe-garamond-pro, serif;
             font-size: 18px;
             color: #244563;
             text-transform: uppercase;
