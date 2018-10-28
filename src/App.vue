@@ -2,18 +2,21 @@
   <div id="app">
     <Header></Header>
     <Carrossel></Carrossel>
+    <News></News>
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header'
 import Carrossel from '@/components/Carrossel'
+import News from '@/components/News'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Carrossel
+    Carrossel,
+    News
   }
 }
 </script>

@@ -1,23 +1,37 @@
 <template>
     <div class="carrossel__container">
         <ul class="carrossel">
-            <li class="carrossel__item">
-                <img src="../assets/image1-mobile.jpg" alt="">        
-            </li>
-            <li class="carrossel__item">
-                <img src="../assets/image1-mobile.jpg" alt="">
-            </li>
-            <li class="carrossel__item">
-                <img src="../assets/image1-mobile.jpg" alt="">
+            <li class="carrossel__item" v-bind:key="banner" v-for="banner in banners">
+                <img :src="banner.srcMobile" :alt="banner.alt">        
             </li>
         </ul>
     </div>
 </template>
 
 <script>
-
+import BannerMobile1 from '../assets/image1-mobile.jpg'
+import BannerMobile2 from '../assets/image2-mobile.jpg'
+import BannerMobile3 from '../assets/image3-mobile.jpg'
 export default {
     name: 'Carrossel',
+    components: {BannerMobile1,BannerMobile2,BannerMobile3},
+    data() {
+        return {
+            banners: 
+            [{
+                srcMobile: BannerMobile1,
+                alt: 'Banner Mobile 1'
+            },
+            {
+                srcMobile: BannerMobile2,
+                alt: 'Banner Mobile 2'
+            },
+            {
+                srcMobile: BannerMobile3,
+                alt: 'Banner Mobile 3'
+            }]
+        }
+    },
     mounted() {
         $('.carrossel').slick();
     }
