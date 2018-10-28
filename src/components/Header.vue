@@ -1,5 +1,5 @@
 <template>
-    <div class="header__content">
+    <div class="header__container">
         <nav>
             <div class="header__logo">
                 <img src="../assets/logo-storm.png" alt="Logo Storm Security">
@@ -28,7 +28,12 @@ export default {
 
 <style lang="scss">
 .header {
-    &__content {
+    &__container {
+        position: absolute;
+        z-index: 100000;
+        width: 100%;
+        padding: 0 10px;
+        top: 10px;
 
         nav {
             background-image: url('../assets/header-background.jpg');
@@ -59,7 +64,7 @@ export default {
             background-image: url('../assets/menu-icon-active.png');
             background-color: #171717;
 
-            .menu-mobile__content {
+            .menu-mobile__container {
                 display: block;
             }
         }
