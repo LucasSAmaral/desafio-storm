@@ -66,16 +66,12 @@ export default {
     methods: {
         increaseIndex: function() {
             if(this.index < 2) {
-                this.index = this.index + 1;
-            } else if(this.index == 2) {
-                this.index == 2;
+                this.index++;
             }
         },
         decreaseIndex: function() {
-            if(this.index == 1 || this.index == 2) {
-                this.index = this.index - 1;
-            } else if (this.index == 0) {
-                this.index == 0;
+            if(this.index > 0) {
+                this.index--;
             }
         }
 
