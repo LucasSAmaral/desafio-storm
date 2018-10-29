@@ -20,6 +20,9 @@
                 <ControlSelection @click.native="decreaseIndex()" :img="require('../assets/control-prev.png')" alt="Selecione a notícia anterior" text="Anterior"></ControlSelection>
             </div>
         </div>
+        <div class="news-desktop__selection-list--container">
+            teste
+        </div>
         
     </div>    
 </template>
@@ -39,9 +42,9 @@ export default {
             articles:
             [{
                 title: 'O GLOBO BLOGS - INOVAÇÃO',
-                subtitle: '',
+                subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at fermentum dolor.',
                 picture: Picture1,
-                imgSubtitle: '',
+                imgSubtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at fermentum dolor.',
                 paragraph1: 'Desenvolvido pela Storm Security, o Telecine Play (www.telecineplay.com.br) é uma plataforma que coloca à disposição, na web, os filmes da programação dos canais Telecine para o assinanteassistir online, no momento em que desejar, em vários dispositivos (desktop, notebook, iPad, iPhone, iPad Touch e smartphones com o sistema Android).',
                 paragraph2: ''
             },
@@ -55,9 +58,9 @@ export default {
             },
             {
                 title: 'REVISTA GALILEU',
-                subtitle:'',
+                subtitle:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at fermentum dolor.',
                 picture: Picture3,
-                imgSubtitle: '',
+                imgSubtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at fermentum dolor.',
                 paragraph1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at fermentum dolor. Phasellus id aliquam turpis. Etiam magna elit, ullamcorper mattis diam quis, hendrerit commodo arcu. Pellentesque quis ante non erat consequat commodo sit amet ac nibh. Morbi blandit ac nunc sit amet ornare. Suspendisse potenti. Suspendisse in est ullamcorper, tincidunt sem eget, convallis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales lectus a purus ullamcorper pretium.',
                 paragraph2: ''
             }]
@@ -96,6 +99,7 @@ export default {
             color: #e4f2fd;
             font-family: adobe-garamond-pro, serif;
             padding: 0 10px;
+            position: relative;
 
             &--title {
                 font-size: 17px;
@@ -110,6 +114,7 @@ export default {
                 img {
                     width: 100%;
                     height: auto;
+                    border: 1px solid #253646;
                 }
 
                 &-subtitle {
@@ -126,8 +131,8 @@ export default {
             background-color: #1b2732;
             border: 1px solid #153b56;
             border-radius: 3px;
-            position: absolute;
-            top: 103px;
+            margin-top: 103px;
+            margin-left: 10px;
             padding: 0 10px 15px;
 
             &--social-media {
@@ -138,6 +143,18 @@ export default {
                 img {
                     margin-bottom: 10px;
                 }
+            }
+        }
+        &__selection-list {
+            &--container {
+                min-width: 335px;
+                max-height: 175px;
+                background-color: red;
+                margin-left: 20px;
+                border-left: 5px solid #1979bc;
+                position: relative;
+                padding: 0 20px;
+                padding-top: 58px;
             }
         }
     }
