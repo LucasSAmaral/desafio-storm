@@ -2,21 +2,41 @@
   <div id="app">
     <Header></Header>
     <Carrossel></Carrossel>
-    <News></News>
+    <NewsMobile v-if="showMobile"></NewsMobile>
+    <NewsDesktop v-if="showDesktop"></NewsDesktop>
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header'
 import Carrossel from '@/components/Carrossel'
-import News from '@/components/News'
+import NewsMobile from '@/components/NewsMobile'
+import NewsDesktop from '@/components/NewsDesktop'
 
 export default {
   name: 'App',
   components: {
     Header,
     Carrossel,
-    News
+    NewsMobile,
+    NewsDesktop
+  },
+  data(){
+    return {
+      showMobile: true,
+      showDesktop: false
+    }
+  },
+  mounted(){
+    let screenWidth = window.innerWidth;
+    
+    if(screenWidth <= 768) {
+      this.showMobile = true;
+      this.showDesktop = false;
+    } else {
+      this.showMobile = false;
+      this.showDesktop = true;
+    }
   }
 }
 </script>

@@ -1,33 +1,33 @@
 <template>
-    <div class="news__container">
-        <div class="news__select">
+    <div class="news-mobile__container">
+        <div class="news-mobile__select">
             <select name="news" id="News" v-model="selected" v-on:change="changeNews(selected)">
-                <option v-bind:key="option.value" v-for="option in options" v-bind:value="option.value">{{option.title}}</option>
+                <option v-bind:key="article.value" v-for="article in articles" v-bind:value="article.value">{{article.title}}</option>
             </select>
         </div>
 
-        <div class="news__picture">
-            <img v-bind:src="options[index].picture" alt="">
+        <div class="news-mobile__picture">
+            <img v-bind:src="articles[index].picture" alt="">
         </div>
-        <div class="news__text">
-            <p class="news__title">{{options[index].title}}</p>
-            <p class="news__paragraph">{{options[index].paragraph}}</p>
+        <div class="news-mobile__text">
+            <p class="news-mobile__title">{{articles[index].title}}</p>
+            <p class="news-mobile__paragraph">{{articles[index].paragraph}}</p>
         </div>
     </div>
 </template>
  <script>
- import Picture1 from '../assets/news.jpg'
- import Picture2 from '../assets/Image2.jpg'
- import Picture3 from '../assets/Image3.jpg'
+ import Picture1 from '../assets/news-mobile1.jpg'
+ import Picture2 from '../assets/news-mobile2.jpg'
+ import Picture3 from '../assets/news-mobile3.jpg'
 
  export default {
-     name: 'News',
+     name: 'NewsMobile',
      components: {Picture1, Picture2, Picture3},
      data() {
          return {
              selected: 0,
              index: 0,
-             options: 
+             articles: 
                  [{
                     title: 'O Globo Blogs',
                     paragraph: 'Desenvolvido pela Storm Security, o Telecine Play (www.telecineplay.com.br) é uma plataforma que coloca à disposição, na web, os filmes da programação dos canais Telecine para o assinanteassistir online, no momento em que desejar, em vários dispositivos (desktop, notebook, iPad, iPhone, iPad Touch e smartphones com o sistema Android).',
@@ -57,7 +57,7 @@
  </script>
  
 <style lang="scss">
-.news {
+.news-mobile {
     &__container {
         padding: 0 10px;
         text-align: center;

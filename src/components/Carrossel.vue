@@ -22,7 +22,14 @@ import BannerDesktop3 from '../assets/image3-desktop.jpg'
 
 export default {
     name: 'Carrossel',
-    components: {BannerMobile1,BannerMobile2,BannerMobile3,BannerDesktop1,BannerDesktop2,BannerDesktop3},
+    components: {
+        BannerMobile1,
+        BannerMobile2,
+        BannerMobile3,
+        BannerDesktop1,
+        BannerDesktop2,
+        BannerDesktop3
+    },
     data() {
         return {
             banners: 
