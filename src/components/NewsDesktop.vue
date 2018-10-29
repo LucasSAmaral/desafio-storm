@@ -46,7 +46,7 @@ export default {
                 picture: Picture1,
                 imgSubtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at fermentum dolor.',
                 paragraph1: 'Desenvolvido pela Storm Security, o Telecine Play (www.telecineplay.com.br) é uma plataforma que coloca à disposição, na web, os filmes da programação dos canais Telecine para o assinanteassistir online, no momento em que desejar, em vários dispositivos (desktop, notebook, iPad, iPhone, iPad Touch e smartphones com o sistema Android).',
-                paragraph2: ''
+                paragraph2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at fermentum dolor. Phasellus id aliquam turpis. Etiam magna elit, ullamcorper mattis diam quis, hendrerit commodo arcu. Pellentesque quis ante non erat consequat commodo sit amet ac nibh. Morbi blandit ac nunc sit amet ornare. Suspendisse potenti. Suspendisse in est ullamcorper, tincidunt sem eget, convallis sapien.'
             },
             {
                 title: 'PEQUENAS EMPRESAS GRANDES NEGÓCIOS',
@@ -62,7 +62,7 @@ export default {
                 picture: Picture3,
                 imgSubtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at fermentum dolor.',
                 paragraph1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at fermentum dolor. Phasellus id aliquam turpis. Etiam magna elit, ullamcorper mattis diam quis, hendrerit commodo arcu. Pellentesque quis ante non erat consequat commodo sit amet ac nibh. Morbi blandit ac nunc sit amet ornare. Suspendisse potenti. Suspendisse in est ullamcorper, tincidunt sem eget, convallis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales lectus a purus ullamcorper pretium.',
-                paragraph2: ''
+                paragraph2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at fermentum dolor. Phasellus id aliquam turpis. Etiam magna elit, ullamcorper mattis diam quis, hendrerit commodo arcu. Pellentesque quis ante non erat consequat commodo sit amet ac nibh. Morbi blandit ac nunc sit amet ornare. Suspendisse potenti. Suspendisse in est ullamcorper, tincidunt sem eget, convallis sapien.'
             }]
         }
     },
@@ -95,6 +95,7 @@ export default {
         }
         &__article {
             max-width: 455px;
+            height: 780px;
             width: 100%;
             color: #e4f2fd;
             font-family: adobe-garamond-pro, serif;
