@@ -100,6 +100,7 @@ export default {
             margin: 0 auto;
             margin-top: 115px;
             display: flex;
+            margin-bottom: 20px;
             
         }
         &__article {

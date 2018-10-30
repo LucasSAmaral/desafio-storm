@@ -4,6 +4,7 @@
     <Carrossel></Carrossel>
     <NewsMobile v-if="width <= 768"></NewsMobile>
     <NewsDesktop v-if="width > 768"></NewsDesktop>
+    <ContactUs></ContactUs>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Header from '@/components/Header'
 import Carrossel from '@/components/Carrossel'
 import NewsMobile from '@/components/NewsMobile'
 import NewsDesktop from '@/components/NewsDesktop'
+import ContactUs from '@/components/ContactUs'
 
 export default {
   name: 'App',
@@ -19,7 +21,8 @@ export default {
     Header,
     Carrossel,
     NewsMobile,
-    NewsDesktop
+    NewsDesktop,
+    ContactUs
   },
   data(){
     return {
