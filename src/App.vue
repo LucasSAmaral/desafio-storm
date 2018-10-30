@@ -4,7 +4,7 @@
     <Carrossel></Carrossel>
     <NewsMobile v-if="width <= 768"></NewsMobile>
     <NewsDesktop v-if="width > 768"></NewsDesktop>
-    <ContactUs></ContactUs>
+    <ContactUs v-if="width > 768"></ContactUs>
   </div>
 </template>
 

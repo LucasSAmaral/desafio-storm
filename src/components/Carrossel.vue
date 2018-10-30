@@ -2,11 +2,10 @@
     <div class="carrossel__container">
         <ul class="carrossel">
             <li class="carrossel__item" v-bind:key="banner" v-for="banner in banners">
-                <picture>
-                    <source :srcset="banner.srcDesktop" media="(min-width: 769px)">
-                    <source :srcset="banner.srcMobile" media="(max-width: 768px)">
-                    <img :src="banner.srcMobile" :alt="banner.alt">
-                </picture>
+                <div class="carrossel__item--img">
+                        <img :src="banner.srcDesktop" :alt="banner.alt" class="carrossel__img--desktop">
+                        <img :src="banner.srcMobile" :alt="banner.alt" class="carrossel__img--mobile">
+                </div>
             </li>
         </ul>
     </div>
@@ -60,6 +59,22 @@ export default {
 .carrossel {
     padding: 0;
     margin: 0;
+
+    &__img {
+        
+        &--mobile {
+            @media (min-width: 769px) {
+                display: none !important;
+            }
+        }
+        
+        &--desktop {
+            display: none !important;
+            @media (min-width: 769px) {
+                display: block !important;
+            }
+        }
+    }
 }
 
 .slick-next,

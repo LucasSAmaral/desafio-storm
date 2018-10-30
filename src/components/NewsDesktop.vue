@@ -25,7 +25,7 @@
         </div>
         <div class="news-desktop__selection-list--container">
             <ul>
-                <li :class="{selected: index == selection.value}" @click="index = selection.value" v-bind:key="selection" v-for="selection in articles">{{selection.title}}</li>
+                <li :class="{selected: index == selection.value}" @click="index = selection.value" v-bind:key="selection.value" v-for="selection in articles">{{selection.title}}</li>
             </ul>
             <div class="border"></div>
         </div>
@@ -100,7 +100,11 @@ export default {
             margin: 0 auto;
             margin-top: 115px;
             display: flex;
-            margin-bottom: 20px;
+            margin-bottom: 90px;
+
+            @media (min-width: 1024px) {
+                margin-bottom: 20px;
+            }
             
         }
         &__article {
