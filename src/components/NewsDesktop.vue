@@ -6,6 +6,9 @@
             <div class="news-desktop__article--img">
                 <img :src="articles[index].picture" alt="">
                 <p class="news-desktop__article--img-subtitle">{{articles[index].imgSubtitle}}</p>
+                <div class="border--1"></div>
+                <div class="border--2"></div>
+                <div class="border--3"></div>
             </div>
             <p class="news-desktop__article--paragraph">{{articles[index].paragraph1}}</p>
             <p class="news-desktop__article--paragraph">{{articles[index].paragraph2}}</p>
@@ -21,7 +24,10 @@
             </div>
         </div>
         <div class="news-desktop__selection-list--container">
-            teste
+            <ul>
+                <li :class="{selected: index == selection.value}" @click="index = selection.value" v-bind:key="selection" v-for="selection in articles">{{selection.title}}</li>
+            </ul>
+            <div class="border"></div>
         </div>
         
     </div>    
@@ -41,6 +47,7 @@ export default {
             index: 1,
             articles:
             [{
+                value: 0,
                 title: 'O GLOBO BLOGS - INOVAÇÃO',
                 subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at fermentum dolor.',
                 picture: Picture1,
@@ -49,6 +56,7 @@ export default {
                 paragraph2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at fermentum dolor. Phasellus id aliquam turpis. Etiam magna elit, ullamcorper mattis diam quis, hendrerit commodo arcu. Pellentesque quis ante non erat consequat commodo sit amet ac nibh. Morbi blandit ac nunc sit amet ornare. Suspendisse potenti. Suspendisse in est ullamcorper, tincidunt sem eget, convallis sapien.'
             },
             {
+                value: 1,
                 title: 'PEQUENAS EMPRESAS GRANDES NEGÓCIOS',
                 subtitle: 'Ex-hacker brasileiro projeta miniaviões para encontrar carros roubados, vigiar fazendas e gerenciar o trânsito',
                 picture: Picture2,
@@ -57,6 +65,7 @@ export default {
                 paragraph2: 'Os Vants desenvolvidos pelo brasileiro são bem diferentes daqueles que ficaram conhecidos por custarem milhões de dólares e participarem de ações militares como a Guerra do Afeganistão e a captura de Bin Laden. Fazem parte de uma nova leva de veículos mais baratos, com menos recursos e projetados para o uso civil. Abreu Júnior não está só. A polícia da Austrália já recomendou ao governo'
             },
             {
+                value: 2,
                 title: 'REVISTA GALILEU',
                 subtitle:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at fermentum dolor.',
                 picture: Picture3,
@@ -102,8 +111,17 @@ export default {
             padding: 0 10px;
             position: relative;
 
+            p {
+                margin: 0;
+            }
+
             &--title {
                 font-size: 17px;
+            }
+
+            &--title,
+            &--subtitle {
+                margin-bottom: 15px !important;
             }
 
             &--subtitle,
@@ -111,7 +129,47 @@ export default {
                 font-size: 15px;
             }
 
+            &--paragraph {
+                margin-bottom: 20px !important;
+            }
+
             &--img {
+                position: relative;
+                
+                .border {
+                    &--1,
+                    &--2,
+                    &--3 {
+                        position: absolute;
+                        display: none;
+
+                        @media (min-width: 910px) {
+                            display: block;
+                        }
+                    }
+                    &--1 {
+                        background-color: #1979bc;
+                        width: 396px;
+                        min-height: 3px;
+                        top: 0;
+                        left: -2px;
+                    }
+                    &--2 {
+                        background-color: #4b87c0;
+                        width: 6px;
+                        min-height: 30px;
+                        top: -5px;
+                        right: -1px;
+                    }
+                    &--3 {
+                        background-color: #1979bc;
+                        width: 3px;
+                        min-height: 270px;
+                        right: 0;
+                        bottom: 13px;
+                    }
+                }
+
                 img {
                     width: 100%;
                     height: auto;
@@ -120,6 +178,8 @@ export default {
 
                 &-subtitle {
                     font-size: 10px;
+                    margin-top: 5px !important;
+                    margin-bottom: 24px !important;
                 }
             }
         }
@@ -150,12 +210,38 @@ export default {
             &--container {
                 min-width: 335px;
                 max-height: 175px;
-                background-color: red;
                 margin-left: 20px;
                 border-left: 5px solid #1979bc;
                 position: relative;
                 padding: 0 20px;
-                padding-top: 58px;
+                padding-top: 63px;
+
+                .border {
+                    position: absolute;
+                    width: 174px;
+                    min-height: 4px;
+                    background-color: #1979bc;
+                    top: 30px;
+                    left: -20px;
+                }
+
+                ul {
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+
+                    li {
+                        font-size: 13px;
+                        color: #fefefe;
+                        margin-bottom: 20px;
+                        cursor: pointer;
+                        font-family: adobe-garamond-pro, serif;
+
+                        &.selected {
+                            color: #fff001;
+                        }
+                    }
+                }
             }
         }
     }
