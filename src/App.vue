@@ -56,7 +56,6 @@ body {
   background-color: #161616;
 }
 #app {
-  max-width: 1400px;
   margin: 0 auto;
 }
 </style>

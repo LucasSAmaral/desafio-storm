@@ -1,30 +1,42 @@
-# desafio-storm
+<h1>Desafio Storm</h1>
 
-> Desafio proposto pela Storm Security
+## Descrição
 
-## Build Setup
+Este é um desafio para Desenvolvedor Front End proposto pela Storm Security, que consiste em montar um layout, para mobile e desktop, com base em um psd fornecido pela empresa.
+
+### Instalação
+
+Primeiro clone o repositório para sua máquina. Digite o código abaixo.
 
 ``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+git clone https://github.com/LucasSAmaral/desafio-storm.git
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Depois de baixar o repositório, entre na pasta do projeto.
+
+``` bash
+cd desafio-storm
+```
+
+Agora é preciso instalar as dependências do projeto. Para isso, digite:
+
+``` bash
+npm install
+```
+
+Para rodar a aplicação, digite no terminal o código abaixo.
+
+``` bash
+npm run dev
+```
+Basta acessar o endereço http://localhost:8080/ para ver a aplicação rodando.
+
+Para gerar a build, basta digitar:
+``` bash
+npm run build
+```
+E para rodar o teste e2e, digite:
+
+``` bash
+npm run e2e
+```

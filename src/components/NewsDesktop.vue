@@ -29,7 +29,6 @@
             </ul>
             <div class="border"></div>
         </div>
-        <div class="container-anchor"><a href="#header" class="anchor top"><img src="../assets/top.png" alt=""></a></div>
     </div>    
 </template>
 
@@ -88,26 +87,6 @@ export default {
             }
         }
 
-    },
-    created(){
-        $(document).ready(()=>{
-            let offset = $('.container-anchor').offset().top;
-            let $anchorTop = $('.container-anchor');
-
-           $(document).scroll(()=>{
-               if(offset <= $(window).scrollTop()) {
-                   $anchorTop.addClass('fixed');
-               } else {
-                   $anchorTop.removeClass('fixed');
-               }
-           });
-
-           $('.top').click(function(e){
-                e.preventDefault();
-                $('html, body').animate({
-                scrollTop: $($(this).attr('href')).offset().top}, 500);
-            });
-        })
     }
 }
 </script>
@@ -125,26 +104,6 @@ export default {
 
             @media (min-width: 1024px) {
                 margin-bottom: 20px;
-            }
-
-            .container-anchor {
-                width: 100%;
-                max-width: 46px;
-                position: absolute;
-                right: 0;
-
-                @media(max-width: 768px) {
-                    display: none;
-                }
-            
-                &.fixed {
-                        position: fixed;
-                        top: 0;
-                    }
-                .top {
-                    position: absolute;
-                    bottom: -385px;
-                }
             }
         }
         &__article {

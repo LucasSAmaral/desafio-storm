@@ -60,7 +60,6 @@ export default {
         &__container {
             width: 100%;
             padding-top: 107px;
-            max-width: 1400px;
             min-height: 652px;
             background-image: url('../assets/contact-us-background.jpg')
         }
