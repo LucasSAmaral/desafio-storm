@@ -2,11 +2,10 @@
     <div class="carrossel__container">
         <ul class="carrossel">
             <li class="carrossel__item" v-bind:key="banner" v-for="banner in banners">
-                <picture>
-                    <source :srcset="banner.srcDesktop" media="(min-width: 769px)">
-                    <source :srcset="banner.srcMobile" media="(max-width: 768px)">
-                    <img :src="banner.srcMobile" :alt="banner.alt">
-                </picture>
+                <div class="carrossel__item--img">
+                        <img :src="banner.srcDesktop" :alt="banner.alt" class="carrossel__img--desktop">
+                        <img :src="banner.srcMobile" :alt="banner.alt" class="carrossel__img--mobile">
+                </div>
             </li>
         </ul>
     </div>
@@ -51,7 +50,9 @@ export default {
         }
     },
     mounted() {
-        $('.carrossel').slick();
+        $('.carrossel').slick({
+            infinite: false
+        });
     }
 }
 </script>
@@ -60,6 +61,22 @@ export default {
 .carrossel {
     padding: 0;
     margin: 0;
+
+    &__img {
+        
+        &--mobile {
+            @media (min-width: 769px) {
+                display: none !important;
+            }
+        }
+        
+        &--desktop {
+            display: none !important;
+            @media (min-width: 769px) {
+                display: block !important;
+            }
+        }
+    }
 }
 
 .slick-next,
@@ -78,16 +95,47 @@ export default {
     cursor: pointer;
     background-repeat: no-repeat;
     z-index: 1;
+
+    @media (min-width: 769px) {
+        width: 37px;
+        height: 63px;
+    }
 }
 
 .slick-prev {
-    background-image: url('../assets/seta-esquerda.png');
+    background-image: url('../assets/seta-esquerda-ativa-mobile.png');
     left: 10px;
+
+    @media (min-width: 769px) {
+        background-image: url('../assets/seta-esquerda-ativa.png') !important;
+        &.slick-disabled {
+            background-image: url('../assets/seta-esquerda-inativa.png') !important;
+        }
+    }
+    @media(min-width: 1200px) {
+        left: 165px;
+    }
+        &.slick-disabled {
+            background-image: url('../assets/seta-esquerda.png');
+        }
 }
 
 .slick-next {
-    background-image: url('../assets/seta-direita.png');
+    background-image: url('../assets/seta-direita-ativa-mobile.png');
     right: 10px;
+
+     @media (min-width: 769px) {
+        background-image: url('../assets/seta-direita-ativa.png') !important;
+        &.slick-disabled {
+            background-image: url('../assets/seta-direita-inativa.png') !important;
+        }
+    }
+    @media(min-width: 1200px) {
+        right: 165px;
+    }
+    &.slick-disabled {
+            background-image: url('../assets/seta-direita.png');
+        }
 }
 
 .slick-slide {

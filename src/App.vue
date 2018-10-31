@@ -2,8 +2,9 @@
   <div id="app">
     <Header></Header>
     <Carrossel></Carrossel>
-    <NewsMobile v-if="showMobile"></NewsMobile>
-    <NewsDesktop v-if="showDesktop"></NewsDesktop>
+    <NewsMobile v-if="width <= 768"></NewsMobile>
+    <NewsDesktop v-if="width > 768"></NewsDesktop>
+    <ContactUs v-if="width > 768"></ContactUs>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Header from '@/components/Header'
 import Carrossel from '@/components/Carrossel'
 import NewsMobile from '@/components/NewsMobile'
 import NewsDesktop from '@/components/NewsDesktop'
+import ContactUs from '@/components/ContactUs'
 
 export default {
   name: 'App',
@@ -19,23 +21,26 @@ export default {
     Header,
     Carrossel,
     NewsMobile,
-    NewsDesktop
+    NewsDesktop,
+    ContactUs
   },
   data(){
     return {
       showMobile: true,
-      showDesktop: false
+      showDesktop: false,
+      width: 0
     }
   },
-  mounted(){
-    let screenWidth = window.innerWidth;
-    
-    if(screenWidth <= 768) {
-      this.showMobile = true;
-      this.showDesktop = false;
-    } else {
-      this.showMobile = false;
-      this.showDesktop = true;
+  created(){
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize();
+  },
+  destroyed(){
+    window.removeEventListener('resize', this.handleResize)
+  },
+  methods: {
+    handleResize() {
+      this.width = window.innerWidth;
     }
   }
 }
@@ -51,7 +56,6 @@ body {
   background-color: #161616;
 }
 #app {
-  max-width: 1400px;
   margin: 0 auto;
 }
 </style>
