@@ -16,11 +16,11 @@
         <div class="news-desktop__controls--container">
             <div class="news-desktop__controls">
                 <div class="news-desktop__controls--social-media">
-                    <img src="../assets/facebook-like.png" alt="Curta no Facebook">
-                    <img src="../assets/tweet.png" alt="Nos siga no Twitter">
+                    <a href="https://www.facebook.com/stormseccom/?ref=br_rs"><img src="../assets/facebook-like.png" alt="Curta no Facebook"></a>
+                    <a href="javascript:;"><img src="../assets/tweet.png" alt="Nos siga no Twitter"></a>
                 </div>
-                <ControlSelection @click.native="increaseIndex()" :img="require('../assets/control-next.png')" alt="Selecione a próxima notícia" text="Próximo"></ControlSelection>
-                <ControlSelection @click.native="decreaseIndex()" :img="require('../assets/control-prev.png')" alt="Selecione a notícia anterior" text="Anterior"></ControlSelection>
+                <ControlSelection id="proximo" @click.native="increaseIndex()" :img="require('../assets/control-next.png')" alt="Selecione a próxima notícia" text="Próximo"></ControlSelection>
+                <ControlSelection id="anterior" @click.native="decreaseIndex()" :img="require('../assets/control-prev.png')" alt="Selecione a notícia anterior" text="Anterior"></ControlSelection>
             </div>
         </div>
         <div class="news-desktop__selection-list--container">

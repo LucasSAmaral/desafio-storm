@@ -2,6 +2,9 @@
     <div class="contact-us__container">
         <div id="contact" class="contact-us__text">
             <p>Envie-nos uma solicitação, dúvida, sugestão ou crítica. Nossa equipe responderá o contato o quanto antes.</p>
+            <div class="border--1"></div>
+            <div class="border--2"></div>
+            <div class="border--3"></div>
         </div>
         <div class="contact-us__contact-area">
             <div class="contact-us__form">
@@ -72,6 +75,38 @@ export default {
             text-align: center;
             padding-top: 20px;
             margin-bottom: 40px;
+            position: relative;
+
+            .border {
+                &--1{
+                    min-height: 2px;
+                    width: 82px;
+                    top: 5px;
+                }
+                &--2{
+                    min-height: 82px;
+                    width: 4px;
+                    right: -15px;
+                    top: 25px;
+                }
+                &--3{
+                    min-height: 2px;
+                    width: 82px;
+                    right: -30px;
+                }
+
+                &--1,
+                &--2,
+                &--3 {
+                    background-color: #1979bc;
+                    position: absolute;
+                    display: none;
+
+                    @media (min-width: 910px) {
+                        display: block;
+                    }
+                }
+            }
 
             p {
                 margin: 0;

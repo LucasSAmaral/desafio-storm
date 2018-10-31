@@ -50,7 +50,9 @@ export default {
         }
     },
     mounted() {
-        $('.carrossel').slick();
+        $('.carrossel').slick({
+            infinite: false
+        });
     }
 }
 </script>
@@ -93,16 +95,47 @@ export default {
     cursor: pointer;
     background-repeat: no-repeat;
     z-index: 1;
+
+    @media (min-width: 769px) {
+        width: 37px;
+        height: 63px;
+    }
 }
 
 .slick-prev {
-    background-image: url('../assets/seta-esquerda.png');
+    background-image: url('../assets/seta-esquerda-ativa-mobile.png');
     left: 10px;
+
+    @media (min-width: 769px) {
+        background-image: url('../assets/seta-esquerda-ativa.png') !important;
+        &.slick-disabled {
+            background-image: url('../assets/seta-esquerda-inativa.png') !important;
+        }
+    }
+    @media(min-width: 1200px) {
+        left: 165px;
+    }
+        &.slick-disabled {
+            background-image: url('../assets/seta-esquerda.png');
+        }
 }
 
 .slick-next {
-    background-image: url('../assets/seta-direita.png');
+    background-image: url('../assets/seta-direita-ativa-mobile.png');
     right: 10px;
+
+     @media (min-width: 769px) {
+        background-image: url('../assets/seta-direita-ativa.png') !important;
+        &.slick-disabled {
+            background-image: url('../assets/seta-direita-inativa.png') !important;
+        }
+    }
+    @media(min-width: 1200px) {
+        right: 165px;
+    }
+    &.slick-disabled {
+            background-image: url('../assets/seta-direita.png');
+        }
 }
 
 .slick-slide {

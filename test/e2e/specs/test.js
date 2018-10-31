@@ -13,7 +13,7 @@ module.exports = {
       .waitForElementVisible('#app', 5000)
       .assert.elementPresent('.first')
       .assert.containsText('a', 'CONHEÇA A STORM')
-      .assert.elementCount('img', 21)
+      .assert.elementCount('img', 13)
       .click('.first .anchor')
       .waitForElementVisible('.top', 1000)
       .click('.top')
