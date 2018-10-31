@@ -40,3 +40,15 @@ E para rodar o teste e2e, digite:
 ``` bash
 npm run e2e
 ```
+
+O teste também está disponível no endereço: https://desafio-storm.netlify.com/
+
+### Stack utilizado
+
+* Vue.js;
+
+* SASS;
+
+* jQuery;
+
+* Netlify, para hospedar o projeto.
