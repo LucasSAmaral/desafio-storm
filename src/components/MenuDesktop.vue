@@ -1,11 +1,11 @@
 <template>
     <div class="menu-desktop__container">
         <ul>
-            <li class="first" :class="{selected:itemSelected == 1}" @click="itemSelected = 1">CONHEÇA A STORM</li>
-            <li class="second" :class="{selected:itemSelected == 2}" @click="itemSelected = 2">PORTIFÓLIO</li>
-            <li class="third" :class="{selected:itemSelected == 3}" @click="itemSelected = 3">PRODUTOS</li>
-            <li class="fourth" :class="{selected:itemSelected == 4}" @click="itemSelected = 4">CLIPPING</li>
-            <li class="fifth" :class="{selected:itemSelected == 5}" @click="itemSelected = 5">FAÇA CONTATO</li>
+            <li class="first" :class="{selected:itemSelected == 1}" @click="itemSelected = 1"><a class="anchor" href="#clipping">CONHEÇA A STORM</a></li>
+            <li class="second" :class="{selected:itemSelected == 2}" @click="itemSelected = 2"><a class="anchor" href="#clipping">PORTIFÓLIO</a></li>
+            <li class="third" :class="{selected:itemSelected == 3}" @click="itemSelected = 3"><a class="anchor" href="#clipping">PRODUTOS</a></li>
+            <li class="fourth" :class="{selected:itemSelected == 4}" @click="itemSelected = 4"><a class="anchor" href="#clipping">CLIPPING</a></li>
+            <li class="fifth" :class="{selected:itemSelected == 5}" @click="itemSelected = 5"><a class="anchor" href="#contact">FAÇA CONTATO</a></li>
         </ul>
     </div>    
 </template>
@@ -17,6 +17,15 @@ export default {
         return {
             itemSelected : 1
         }
+    },
+    created(){
+        $(document).ready(function(){
+            $('.anchor').click(function(e){
+                e.preventDefault();
+                $('html, body').animate({
+                scrollTop: $($(this).attr('href')).offset().top}, 1000);
+            });
+        })
     }
 }
 </script>
@@ -36,9 +45,6 @@ export default {
             list-style: none;
             margin: 0;
             padding: 0;
-            font-size: 14px;
-            font-family: "Trebuchet MS", sans-serif;
-            color: #cecece;
 
             li {
                 border-right: 1px solid #2c2d2e;
@@ -46,6 +52,13 @@ export default {
                 padding: 0 10px;
                 position: relative;
                 cursor: pointer;
+
+                a {
+                    font-size: 14px;
+                    font-family: "Trebuchet MS", sans-serif;
+                    color: #cecece;
+                    text-decoration: none;
+                }
 
                 &:last-child {
                     border-right: none;

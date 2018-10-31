@@ -1,5 +1,5 @@
 <template>
-    <div class="news-desktop__container">
+    <div id="clipping" class="news-desktop__container">
         <div class="news-desktop__article">
             <p class="news-desktop__article--title">{{articles[index].title}}</p>
             <p class="news-desktop__article--subtitle">{{articles[index].subtitle}}</p>
@@ -29,7 +29,7 @@
             </ul>
             <div class="border"></div>
         </div>
-        
+        <div class="container-anchor"><a href="#header" class="anchor top"><img src="../assets/top.png" alt=""></a></div>
     </div>    
 </template>
 
@@ -38,6 +38,7 @@ import Picture1 from '../assets/news-desktop1.jpg'
 import Picture2 from '../assets/news-desktop2.jpg'
 import Picture3 from '../assets/news-desktop3.jpg'
 import ControlSelection from '@/components/ControlSelection'
+import { relative } from 'path';
 
 export default {
     name: 'NewsDesktop',
@@ -87,6 +88,26 @@ export default {
             }
         }
 
+    },
+    created(){
+        $(document).ready(()=>{
+            let offset = $('.container-anchor').offset().top;
+            let $anchorTop = $('.container-anchor');
+
+           $(document).scroll(()=>{
+               if(offset <= $(window).scrollTop()) {
+                   $anchorTop.addClass('fixed');
+               } else {
+                   $anchorTop.removeClass('fixed');
+               }
+           });
+
+           $('.top').click(function(e){
+                e.preventDefault();
+                $('html, body').animate({
+                scrollTop: $($(this).attr('href')).offset().top}, 500);
+            });
+        })
     }
 }
 </script>
@@ -105,7 +126,26 @@ export default {
             @media (min-width: 1024px) {
                 margin-bottom: 20px;
             }
+
+            .container-anchor {
+                width: 100%;
+                max-width: 46px;
+                position: absolute;
+                right: 0;
+
+                @media(max-width: 768px) {
+                    display: none;
+                }
             
+                &.fixed {
+                        position: fixed;
+                        top: 0;
+                    }
+                .top {
+                    position: absolute;
+                    bottom: -385px;
+                }
+            }
         }
         &__article {
             max-width: 455px;

@@ -1,6 +1,6 @@
 <template>
     <div class="contact-us__container">
-        <div class="contact-us__text">
+        <div id="contact" class="contact-us__text">
             <p>Envie-nos uma solicitação, dúvida, sugestão ou crítica. Nossa equipe responderá o contato o quanto antes.</p>
         </div>
         <div class="contact-us__contact-area">
@@ -10,7 +10,7 @@
                 <input type="text" name="email" id="formEmail" placeholder="seu email">
                 <textarea name="mensagem" id="mensagem" placeholder="sua mensagem"></textarea>
                 <div class="contact-us__form--button-container">
-                    <a href="javascript:;" class="contact-us__form--button">Enviar</a>
+                    <button @click="validateForm()" class="contact-us__form--button">Enviar</button>
                 </div>
             </div>
             <div class="contact-us__address--container">
@@ -32,7 +32,23 @@
 
 <script>
 export default {
-    name: 'ContactUs'
+    name: 'ContactUs',
+    methods: {
+        validateForm: function() {
+            if($('#formNome').val() == '') {
+                alert('Preencha o campo nome.');
+                $('#formNome').focus();
+            } else if($('#formEmail').val() == '') {
+                alert('Preencha o campo email.');
+                $('#formEmail').focus();
+            } else if($('#mensagem').val() == '') {
+                alert('Digite sua mensagem.');
+                $('#mensagem').focus();
+            } else if($('#formNome').val() != '' && $('#formEmail').val() != '' && $('#mensagem').val() != '') {
+                alert('Sua mensagem foi enviada. Entraremos em contato em breve.');
+            }
+        }
+    }
 }
 </script>
 
@@ -55,6 +71,7 @@ export default {
             margin: 0 auto;
             text-align: center;
             padding-top: 20px;
+            margin-bottom: 40px;
 
             p {
                 margin: 0;
@@ -71,6 +88,9 @@ export default {
             max-width: 450px;
             font-family: adobe-garamond-pro, serif;
             text-align: center;
+            background-image: url('../assets/background-form.png');
+            background-repeat: no-repeat;
+            background-position-x: right;
 
             &--button {
                 padding: 13px 10px;
@@ -80,6 +100,7 @@ export default {
                 text-transform: uppercase;
                 border-radius: 3px;
                 cursor: pointer;
+                border: none;
 
 
                 &-container {
@@ -135,7 +156,6 @@ export default {
         &__address {
 
             &--container {
-                padding: 26px 0;
                 margin-left: 50px;
             }
 
